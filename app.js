@@ -18,6 +18,16 @@
 
   var STORAGE_KEY = "weeklyWonders.unlockedIds";
 
+  // Turns a relative asset path like "assets/gifs/w1_f1.gif" into a full
+  // URL. If window.ASSET_BASE_URL is set (see config.js), GIFs load from
+  // there (e.g. a Cloudflare R2 bucket) instead of this repo's own
+  // /assets/gifs folder.
+  function resolveAssetUrl(path) {
+    var base = window.ASSET_BASE_URL || "";
+    if (!base) return path;
+    return base.replace(/\/+$/, "") + "/" + path.replace(/^\/+/, "");
+  }
+
   var select = document.getElementById("wonder-select");
   var clueEl = document.getElementById("clue-text");
   var answerBtn = document.getElementById("reveal-answer");
@@ -128,7 +138,7 @@
       if (fact.gif) {
         var img = document.createElement("img");
         img.loading = "lazy";
-        img.src = fact.gif;
+        img.src = resolveAssetUrl(fact.gif);
         img.alt = "Weekly Wonder fact illustration";
         img.className = "fact-gif";
         card.appendChild(img);

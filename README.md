@@ -10,6 +10,7 @@ own GIF).
 index.html          the page shell
 style.css            all styling
 app.js                app logic (loads data, renders the selected wonder)
+config.js             set ASSET_BASE_URL here to load GIFs from a CDN/bucket
 data/
   index.js           lists every data file to load
   wonders-01.js       Weekly Wonders #1-8  (an array pushed onto window.WONDER_DATA)
@@ -72,6 +73,42 @@ codes for any word with:
 
 (As before, this is light camouflage for a classroom setting, not real
 security — anyone who runs that snippet in dev tools could decode it.)
+
+## Hosting GIFs on Cloudflare R2 instead of GitHub
+
+The `assets/gifs` folder is empty in this repo on purpose — it's meant
+for GIFs to be hosted externally (e.g. Cloudflare R2) so the git repo
+stays small. If you'd rather keep GIFs in the repo, see the note in
+`assets/gifs/README.md`.
+
+To use R2:
+
+1. In the Cloudflare dashboard, go to **R2** and create a bucket (e.g.
+   `weekly-wonders-gifs`).
+2. Upload all the GIFs into it, keeping the same path they have in this
+   project: `assets/gifs/w1_f1.gif`, `assets/gifs/w2_f1.gif`, etc. (You
+   can drag-and-drop the whole `assets` folder from the separate GIFs
+   zip you were given — most R2 upload tools preserve folder paths as
+   the object key.)
+3. In the bucket's **Settings**, enable public access — either turn on
+   the free `r2.dev` public bucket URL, or connect a custom domain.
+   Either way you'll get a base URL like
+   `https://pub-1a2b3c4d5e6f7g8h.r2.dev`.
+4. Open `config.js` in this repo and set:
+
+   ```js
+   window.ASSET_BASE_URL = "https://pub-1a2b3c4d5e6f7g8h.r2.dev";
+   ```
+
+   (No trailing slash.)
+5. Commit and push. The app will now load every GIF from
+   `ASSET_BASE_URL + "/assets/gifs/..."` instead of the repo.
+
+No CORS setup is needed just to display images in `<img>` tags — public
+read access on the bucket/object is enough.
+
+To switch back to local hosting, just set `ASSET_BASE_URL` back to `""`
+and make sure the GIFs are present in `assets/gifs` again.
 
 ## Adding more Weekly Wonders
 
