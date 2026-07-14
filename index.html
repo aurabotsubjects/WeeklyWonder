@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Weekly Wonders</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="stage">
+    <header class="topbar">
+      <button id="brand-btn" class="brand" type="button" aria-label="Teacher controls">
+        <span class="brand-mark">&#10024;</span>
+        <span class="brand-text">Weekly Wonders</span>
+      </button>
+      <select id="wonder-select" class="hidden" aria-label="Choose a Weekly Wonder"></select>
+    </header>
+
+    <main class="content-wrap">
+      <p id="loading" class="loading">Loading Weekly Wonders&hellip;</p>
+
+      <section id="content" class="content hidden">
+        <div class="clue-card">
+          <span class="eyebrow">Today's clue</span>
+          <p id="clue-text" class="clue-text"></p>
+
+          <button id="reveal-answer" class="reveal-btn">Reveal Answer</button>
+          <p id="answer-text" class="answer-text hidden"></p>
+          <p id="locked-notice" class="locked-notice hidden">&#128274; Ask your teacher to unlock this one</p>
+        </div>
+
+        <div id="facts" class="facts"></div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Password modal -->
+  <div id="password-modal" class="modal-overlay hidden">
+    <div class="modal-card">
+      <h2 class="modal-title">Teacher Controls</h2>
+      <p class="modal-sub">Enter the password to manage which wonders are unlocked.</p>
+      <input id="password-input" type="password" class="modal-input" placeholder="Password" autocomplete="off" />
+      <p id="password-error" class="modal-error hidden">Incorrect password. Try again.</p>
+      <div class="modal-actions">
+        <button id="password-cancel" class="modal-btn modal-btn-ghost" type="button">Cancel</button>
+        <button id="password-submit" class="modal-btn modal-btn-primary" type="button">Unlock</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Manage wonders modal -->
+  <div id="manage-modal" class="modal-overlay hidden">
+    <div class="modal-card modal-card-wide">
+      <h2 class="modal-title">Unlock Weekly Wonders</h2>
+      <p class="modal-sub">Check a wonder to let students reveal its answer and facts. Unchecked wonders only show the clue.</p>
+      <div id="manage-list" class="manage-list"></div>
+      <div class="modal-actions">
+        <button id="manage-done" class="modal-btn modal-btn-primary" type="button">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="data/index.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
