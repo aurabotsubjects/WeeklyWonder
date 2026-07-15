@@ -313,6 +313,33 @@ html, body {
   margin: 10px 0 0;
 }
 
+.manage-guide-links {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.manage-guide-link {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.manage-guide-link:hover {
+  text-decoration: underline;
+}
+
+.manage-guide-link-secondary {
+  font-weight: 500;
+  font-size: 0.82rem;
+  color: var(--ink-dim);
+}
+
 .modal-actions {
   display: flex;
   justify-content: flex-end;

@@ -50,6 +50,25 @@ To unlock one or more wonders:
    immediately.
 4. Click **Done**.
 
+## Teacher guide (print/download)
+
+Once logged in with the password, the unlock screen also has two links
+below the wonder checklist:
+
+- **Print / View Teacher Guide (PDF)** \u2014 opens
+  `weekly-wonders-teacher-guide.pdf` in a new tab, where the browser's
+  built-in PDF viewer has a print button. This is the one to use for
+  actually printing.
+- **Download Word doc (to edit)** \u2014 downloads
+  `weekly-wonders-teacher-guide.docx`, in case you want to tweak the
+  content yourself.
+
+Both files live at the root of this repo, alongside `index.html`. If
+you regenerate the Word doc (e.g. after adding more wonders), also
+export a matching PDF and keep both files named exactly
+`weekly-wonders-teacher-guide.docx` / `.pdf` so the links keep working
+without any code changes.
+
 Unlock choices are saved in the browser's local storage, so they persist
 on that device/browser across visits (until it's cleared). They are set
 per-device, not shared across students automatically — each computer/
