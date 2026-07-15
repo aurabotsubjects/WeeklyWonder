@@ -12,4 +12,4 @@
 //
 // Example:
 // window.ASSET_BASE_URL = "https://pub-1a2b3c4d5e6f7g8h.r2.dev";
-window.ASSET_BASE_URL = "https://pub-c9d54ec1efa04cfeaa3041eebb9144db.r2.dev";
+window.ASSET_BASE_URL = "";

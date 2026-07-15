@@ -19,6 +19,7 @@ data/
   wonders-04.js       Weekly Wonders #25-27 (an array pushed onto window.WONDER_DATA)
   wonders-05.js       Weekly Wonders #28-32 (an array pushed onto window.WONDER_DATA)
   wonders-06.js       Weekly Wonders #33-36 (an array pushed onto window.WONDER_DATA)
+  wonders-07.js       Weekly Wonders #37-43 (an array pushed onto window.WONDER_DATA)
 assets/
   gifs/               compressed GIFs, one per fact (~50KB-1.2MB each)
 ```
