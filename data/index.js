@@ -11,5 +11,6 @@ window.WONDER_FILES = [
   "data/wonders-07.js",
   "data/wonders-08.js",
   "data/wonders-09.js",
-  "data/wonders-10.js"
+  "data/wonders-10.js",
+  "data/wonders-11.js"
 ];
