@@ -23,8 +23,7 @@ data/
   wonders-08.js       Weekly Wonders #44-53 (an array pushed onto window.WONDER_DATA)
   wonders-09.js       Weekly Wonders #54-60 (an array pushed onto window.WONDER_DATA)
   wonders-10.js       Weekly Wonders #61-69 (an array pushed onto window.WONDER_DATA)
-  wonders-11.js       Weekly Wonders #70-71 (an array pushed onto window.WONDER_DATA)
-  wonders-12-pending.js  Weekly Wonders #72-100 (written, but NOT YET live \u2014 see note below)
+  wonders-11.js       Weekly Wonders #70-100 (an array pushed onto window.WONDER_DATA)
 assets/
   gifs/               compressed GIFs, one per fact (~50KB-1.2MB each)
 ```
@@ -115,23 +114,6 @@ read access on the bucket/object is enough.
 
 To switch back to local hosting, just set `ASSET_BASE_URL` back to `""`
 and make sure the GIFs are present in `assets/gifs` again.
-
-## Pending: Wonders #72-100 (waiting on GIFs)
-
-`data/wonders-12-pending.js` already has the full clue/answer/facts
-content for 29 more wonders (#72-100), but it is **not yet listed in
-`data/index.js`**, so it won't show up on the live site until it's
-added there. (#70 Octopuses and #71 Popcorn are already live in
-`wonders-11.js` since their GIFs arrived first.)
-
-Once GIFs for the remaining ones are ready (named `w72_f1.gif`,
-`w72_f2.gif`, ... `w100_f3.gif` to match the file, or any names \u2014 they
-can be renamed), add them to `assets/gifs/` (or your R2 bucket) and add
-this line to `data/index.js`:
-
-```js
-"data/wonders-12-pending.js"
-```
 
 ## Adding more Weekly Wonders
 
