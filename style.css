@@ -349,6 +349,29 @@ html, body {
   transform: translateY(-1px);
 }
 
+.manage-toolbar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.manage-toolbar-btn {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 600;
+  font-size: 0.82rem;
+  color: var(--teal);
+  background: rgba(46, 196, 182, 0.1);
+  border: 1px solid rgba(46, 196, 182, 0.3);
+  border-radius: 999px;
+  padding: 6px 16px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.manage-toolbar-btn:hover {
+  background: rgba(46, 196, 182, 0.2);
+}
+
 .manage-list {
   max-height: 46vh;
   overflow-y: auto;

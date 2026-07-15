@@ -46,6 +46,8 @@
   var manageModal = document.getElementById("manage-modal");
   var manageList = document.getElementById("manage-list");
   var manageDone = document.getElementById("manage-done");
+  var manageCheckAll = document.getElementById("manage-check-all");
+  var manageUncheckAll = document.getElementById("manage-uncheck-all");
 
   var currentWonder = null;
 
@@ -250,6 +252,31 @@
 
     manageModal.classList.remove("hidden");
   }
+
+  function setAllUnlocked(shouldUnlock) {
+    var set = getUnlockedSet();
+    sortedWonders().forEach(function (w) {
+      if (shouldUnlock) {
+        set.add(w.id);
+      } else {
+        set.delete(w.id);
+      }
+    });
+    saveUnlockedSet(set);
+    populateDropdown();
+    if (currentWonder) {
+      renderWonder(currentWonder);
+    }
+    openManageModal();
+  }
+
+  manageCheckAll.addEventListener("click", function () {
+    setAllUnlocked(true);
+  });
+
+  manageUncheckAll.addEventListener("click", function () {
+    setAllUnlocked(false);
+  });
 
   function closeManageModal() {
     manageModal.classList.add("hidden");
